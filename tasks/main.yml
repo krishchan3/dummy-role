@@ -1,0 +1,13 @@
+---                            
+# tasks file for httpd
+- name: Install apache webserver
+  ansible.builtin.apt:
+    name: apache2
+    state: present
+- name: Copy index file
+  ansible.builtin.copy:
+    src: files/index.html
+    dest: /home/ansible
+    owner: ansible 
+    group: ansible 
+    mode: '0644'
